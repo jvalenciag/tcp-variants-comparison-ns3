@@ -27,3 +27,12 @@
 *.exe
 *.out
 *.app
+
+*.pro.user
+
+experiments/data/*.tr
+experiments/data/*.xml
+experiments/data/*.data
+
+Release/*
+!Release/README
