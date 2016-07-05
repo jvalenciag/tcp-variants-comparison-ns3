@@ -25,11 +25,11 @@ do
 	for PROTOCOL in "${arr[@]}"
     do
         FILE_PREFIX=$OUPUT_PREFIX$PROTOCOL
-        #echo "$prot" --tracing
+        #echo "$prot" 
         ../Release/tcp-variant-comparsion --transport_prot=$PROTOCOL  --run=$((RANDOM%100+1)) \
-        --error_p=$PERROR --duration=120 \
+        --error_p=$PERROR --duration=120 --tracing \
         --bandwidth=10Mbps --access_bandwidth=100Mbps --data=1024 --num_flows=1 --delay=$DELAY \
-        --tr_name="$FILE_PREFIX"_$i.tr --cwnd_tr_name="$FILE_PREFIX"_$i-cwnd.data \
+        --cwnd_tr_name="$FILE_PREFIX"_$i-cwnd.data \ #--tr_name="$FILE_PREFIX"_$i.tr
         --ssthresh_tr_name="$FILE_PREFIX"_$i-ssthresh.data  --flow_monitor_file="$FILE_PREFIX"_$i-flowmonitor.xml &
     done
 	wait

@@ -155,14 +155,7 @@ TraceCwnd (std::string cwnd_tr_file_name)
 {
   AsciiTraceHelper ascii;
   cWndStream  = ascii.CreateFileStream (cwnd_tr_file_name.c_str ());
-  //cWndStream0 = ascii.CreateFileStream (('2' + cwnd_tr_file_name).c_str ());
   Config::ConnectWithoutContext ("/NodeList/1/$ns3::TcpL4Protocol/SocketList/0/CongestionWindow", MakeCallback (&CwndTracer));
-  //std::cout<< "LA PTM!!!" <<std::endl;
-  //Config::ConnectWithoutContext ("/NodeList/2/$ns3::TcpL4Protocol/SocketList/0/CongestionWindow", MakeCallback (&CwndTracer0));
-  //std::cout<< "LA PTM!!!" <<std::endl;
-  //Config::ConnectWithoutContext ("/NodeList/2/$ns3::TcpL4Protocol/SocketList/0/CongestionWindow", MakeCallback (&CwndTracer0));
-  //std::cout<< "LA PTM!!!" <<std::endl;
-
 }
 
 static void
